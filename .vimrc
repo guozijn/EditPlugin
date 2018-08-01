@@ -1,29 +1,23 @@
 " default
-syntax on
+syntax enable
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 set hlsearch
 set autoread
+set nu
 filetype plugin indent on
 let mapleader=";"
 "set ts=2
 "set expandtab
 "set smartindent
 
-" 设置快捷键将选中文本块复制至系统剪贴板
+" leader key +
 vnoremap <Leader>y "+y
-
-" 设置快捷键将系统剪贴板内容粘贴至 vim
 nmap <Leader>p "+p
-
-" 跳转至右方的窗口
 nnoremap <Leader>l <C-W>l
-
-" 跳转至左方的窗口
 nnoremap <Leader>h <C-W>h
-
-" 跳转至上方的子窗口
 nnoremap <Leader>k <C-W>k
-
-" 跳转至下方的子窗口
 nnoremap <Leader>j <C-W>j
 
 " NERDTree
@@ -51,11 +45,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'nerdtree'
 Plugin 'Syntastic'
 Plugin 'vim-flake8'
-Plugin 'YouCompleteMe'
+"Plugin 'YouCompleteMe'
 Plugin 'nerdtree-git-plugin'
 Plugin 'vim-airline'
+Plugin 'vim-airline-themes'
 Plugin 'ctrlp.vim'
 Plugin 'vim-bracketed-paste'
+Plugin 'vim-markdown'
+Plugin 'vim-instant-markdown'
 call vundle#end()
 
 " python
@@ -93,3 +90,9 @@ highlight CursorColumn cterm=NONE ctermbg=235 ctermfg=NONE guibg=NONE guifg=NONE
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline_solarized_bg='dark'
+
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
