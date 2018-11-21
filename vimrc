@@ -7,12 +7,11 @@ set hlsearch
 set autoread
 set nu
 filetype plugin indent on
-let mapleader=";"
-"set ts=2
-"set expandtab
-"set smartindent
 
 " leader key +
+let mapleader=";"
+map <leader>" :sp<CR>
+map <leader>% :vs<CR>
 nnoremap <Leader>l <C-W>l
 nnoremap <Leader>h <C-W>h
 nnoremap <Leader>k <C-W>k
