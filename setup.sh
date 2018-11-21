@@ -4,10 +4,10 @@ REAL_PATH=$(python -c "import os,sys;print os.path.realpath('$0')")
 DIR_NAME=$(dirname "$REAL_PATH")
 if [ ! -d $HOME/.vim ]; then
     mkdir $HOME/.vim
-    echo "Install plugins ..."
+    echo "Install colors ..."
     cp -rf $DIR_NAME/colors $HOME/.vim
     cp $DIR_NAME/vimrc $HOME/.vimrc
-    echo "Install plugins finished"
+    echo "Install colors finished"
 else
     echo "Directory already exist"
     exit 1
