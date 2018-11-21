@@ -21,9 +21,8 @@ nnoremap <Leader>k <C-W>k
 nnoremap <Leader>j <C-W>j
 
 " NERDTree
-map <F2> :NERDTreeMirror<CR>
-map <F2> :NERDTreeToggle<CR>
-map <F3> :bn<CR>
+map <leader>n :NERDTreeToggle<CR>
+map <leader>b :bn<CR>
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -45,7 +44,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'nerdtree'
 Plugin 'Syntastic'
 Plugin 'vim-flake8'
-"Plugin 'YouCompleteMe'
 Plugin 'nerdtree-git-plugin'
 Plugin 'vim-airline'
 Plugin 'vim-airline-themes'
@@ -58,7 +56,8 @@ call vundle#end()
 " python
 let python_highlight_all=1
 let g:ycm_python_binary_path = 'python'
-autocmd FileType python map <buffer> <F5> :call Flake8()<CR>
+"autocmd FileType python map <buffer> <F5> :call Flake8()<CR>
+autocmd FileType python nmap <leader>f :call Flake8()<CR>
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
