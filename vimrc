@@ -13,8 +13,6 @@ let mapleader=";"
 "set smartindent
 
 " leader key +
-vnoremap <Leader>y "+y
-nmap <Leader>p "+p
 nnoremap <Leader>l <C-W>l
 nnoremap <Leader>h <C-W>h
 nnoremap <Leader>k <C-W>k
