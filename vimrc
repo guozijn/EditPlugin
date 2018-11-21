@@ -41,16 +41,13 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'nerdtree'
-Plugin 'Syntastic'
-Plugin 'vim-flake8'
-Plugin 'nerdtree-git-plugin'
-Plugin 'vim-airline'
-Plugin 'vim-airline-themes'
-Plugin 'ctrlp.vim'
-Plugin 'vim-bracketed-paste'
-Plugin 'vim-markdown'
-Plugin 'vim-instant-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 " python
