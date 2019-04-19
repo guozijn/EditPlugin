@@ -1,8 +1,8 @@
 " default
 syntax enable
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+"let g:solarized_termcolors=256
+"set background=dark
+"colorscheme solarized
 set hlsearch
 set autoread
 set nu
@@ -41,17 +41,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-flake8'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 " python
 let python_highlight_all=1
 let g:ycm_python_binary_path = 'python'
 "autocmd FileType python map <buffer> <F5> :call Flake8()<CR>
-autocmd FileType python nmap <leader>f :call Flake8()<CR>
+"autocmd FileType python nmap <leader>f :call Flake8()<CR>
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

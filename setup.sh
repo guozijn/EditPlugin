@@ -5,10 +5,10 @@ DIR_NAME=$(dirname "$REAL_PATH")
 
 if [ ! -d $HOME/.vim ]; then
     mkdir $HOME/.vim
-    echo "Install colors ..."
-    cp -rf $DIR_NAME/colors $HOME/.vim
+    echo "Install vimrc ..."
+    #cp -rf $DIR_NAME/colors $HOME/.vim
     cp $DIR_NAME/vimrc $HOME/.vimrc
-    echo "Install colors finished"
+    echo "Install vimrc finished"
 else
     echo "Directory already exist"
     exit 1
