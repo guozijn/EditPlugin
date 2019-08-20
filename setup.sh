@@ -6,7 +6,8 @@ DIR_NAME=$(dirname "$REAL_PATH")
 if [ ! -d $HOME/.vim ]; then
     mkdir $HOME/.vim
     echo "Install vimrc ..."
-    #cp -rf $DIR_NAME/colors $HOME/.vim
+    # If you like the color of solarized, you can copy it.
+    # cp -rf $DIR_NAME/colors $HOME/.vim
     cp $DIR_NAME/vimrc $HOME/.vimrc
     echo "Install vimrc finished"
 else
@@ -20,5 +21,3 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     vim +PluginInstall +qall
     echo "Install vundle finished"
 fi
-
-echo "EditPlugin installed"

@@ -7,6 +7,9 @@ set hlsearch
 set autoread
 set nu
 filetype plugin indent on
+"set ts=2
+"set expandtab
+"set smartindent
 
 " leader key +
 let mapleader=";"
@@ -38,20 +41,18 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'vim-syntastic/syntastic'
-"Plugin 'nvie/vim-flake8'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'kien/ctrlp.vim'
+Plugin 'nerdtree'
+Plugin 'Syntastic'
+Plugin 'nerdtree-git-plugin'
+Plugin 'vim-airline'
+Plugin 'vim-airline-themes'
 call vundle#end()
 
 " python
 let python_highlight_all=1
 let g:ycm_python_binary_path = 'python'
 "autocmd FileType python map <buffer> <F5> :call Flake8()<CR>
-"autocmd FileType python nmap <leader>f :call Flake8()<CR>
+autocmd FileType python nmap <leader>f :call Flake8()<CR>
 
 " yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -59,7 +60,7 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 " auto python header
 function HeaderPython()
-call setline(1, "#!/usr/bin/env python")
+call setline(1, "#!/usr/bin/env python3")
 call append(1, "#-*- coding:utf8 -*-")
 normal G
 normal o
@@ -89,3 +90,8 @@ let g:airline_solarized_bg='dark'
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+" highlight whitespace
+highlight ExtraWhitespace ctermbg=red guibg=darkgreen
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$\| \+\ze\t/
